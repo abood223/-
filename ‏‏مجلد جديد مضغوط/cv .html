@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية - عبدالرزاق الأحمد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* تعريف متغيرات الألوان لسهولة التعديل */
+        :root {
+            --primary-color: #3498db; /* أزرق فاتح */
+            --secondary-color: #2c3e50; /* أزرق داكن/رمادي */
+            --accent-color: #e74c3c; /* لون مميز (يمكن تعديله) */
+            --text-color: #333333;
+            --light-text-color: #ecf0f1; /* نص فاتح للخلفيات الداكنة */
+            --background-light: #f8f9fa; /* خلفية فاتحة جداً */
+            --background-medium: #e9ecef; /* خلفية متوسطة الفتحة */
+            --border-color: #dee2e6;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif; /* استخدام خط كايرو */
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, var(--background-light), var(--background-medium)); /* خلفية متناسقة متدرجة */
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            direction: rtl; /* جعل النص يبدأ من اليمين لصفحة RTL */
+            line-height: 1.7; /* تحسين قراءة النص */
+            overflow-x: hidden; /* منع ظهور شريط التمرير الأفقي */
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 10px 30px var(--shadow-color); /* ظل محسّن */
+            display: flex;
+            width: 95%; /* زيادة عرض الحاوية */
+            max-width: 1200px;
+            margin: 30px; /* زيادة الهامش لجعلها تطفو أكثر */
+            border-radius: 12px; /* زوايا أكثر استدارة */
+            overflow: hidden;
+            transition: all 0.3s ease-in-out; /* انتقال سلس عند أي تغيير */
+        }
+
+        .left-column {
+            background-color: var(--secondary-color); /* لون عمود جانبي داكن */
+            color: var(--light-text-color);
+            padding: 30px;
+            width: 35%; /* تعديل العرض */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative; /* لتحديد موقع الشريط الجانبي */
+            animation: slideInLeft 1s ease-out; /* تأثير حركي عند التحميل */
+        }
+
+        /* تأثير حركي لدخول العمود الأيسر */
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            width: 140px; /* زيادة حجم الصورة */
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 6px solid var(--primary-color); /* حدود الصورة بلون أساسي */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* ظل خفيف للصورة */
+            transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out; /* انتقال سلس للحركات */
+        }
+
+        .profile img:hover {
+            transform: scale(1.05); /* تكبير طفيف عند تمرير الماوس */
+            border-color: var(--accent-color); /* تغيير لون الحدود عند التفاعل */
+        }
+
+        .profile h1 {
+            font-size: 2.5em; /* زيادة حجم الخط */
+            margin-bottom: 5px;
+            font-weight: 700; /* خط سميك */
+        }
+
+        .profile .title {
+            font-size: 1.2em;
+            color: var(--light-text-color);
+            opacity: 0.8;
+        }
+        .contact-info, .skills, .languages {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .contact-info h3, .skills h3, .languages h3 {
+            font-size: 1.5em;
+            border-bottom: 2px solid var(--primary-color); /* خط تحت العنوان بلون أساسي */
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-align: right;
+            display: flex; /* لترتيب الأيقونة والنص */
+            align-items: center;
+            justify-content: flex-end; /* لترتيب الأيقونة والنص من اليمين */
+        }
+
+        .contact-info h3 i, .skills h3 i, .languages h3 i {
+            margin-right: 10px; /* مسافة بين الأيقونة والنص */
+            color: var(--primary-color);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+            text-align: right; /* محاذاة النص لليمين */
+            justify-content: flex-end;
+        }
+
+        .contact-info i {
+            margin-right: 10px; /* مسافة بين الأيقونة والنص */
+            color: var(--primary-color);
+            width: 20px;
+            text-align: center;
+        }
+
+        .skills ul, .languages ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li, .languages li {
+            padding: 10px 0; /* زيادة التباعد */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* خط فاصل شفاف */
+            text-align: right;
+            font-size: 1.05em;
+            transition: transform 0.2s ease-in-out; /* انتقال سلس عند التفاعل */
+        }
+
+        .skills li:hover, .languages li:hover {
+            transform: translateX(-5px); /* تحرك خفيف لليسار عند التمرير */
+        }
+
+        .skills li:last-child, .languages li:last-child {
+            border-bottom: none;
+        }
+
+        .right-column {
+            padding: 40px; /* زيادة التباعد الداخلي */
+            width: 65%; /* تعديل العرض */
+            background-color: #fff;
+            animation: fadeIn 1.5s ease-out; /* تأثير حركي عند التحميل */
+        }
+
+        /* تأثير حركي لظهور العمود الأيمن */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .right-column section {
+            margin-bottom: 45px; /* زيادة التباعد بين الأقسام */
+            padding-bottom: 15px; /* تباعد داخلي للأقسام */
+            border-bottom: 1px dashed var(--border-color); /* خط فاصل منقط */
+            opacity: 0; /* إخفاء الأقسام في البداية لتأثير الظهور */
+            transform: translateY(20px); /* تحريكها للأسفل */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* انتقال سلس للظهور */
+        }
+
+        .right-column section:last-child {
+            border-bottom: none; /* إزالة الخط الفاصل من آخر قسم */
+        }
+
+        /* فئة لإظهار الأقسام بعد تحميل الصفحة/عند التمرير */
+        .right-column section.section-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .right-column h2 {
+            font-size: 2.2em; /* زيادة حجم الخط */
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color); /* خط تحت العنوان بلون أساسي */
+            padding-bottom: 10px;
+            margin-bottom: 25px; /* زيادة الهامش السفلي */
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .right-column h2 i {
+            margin-right: 15px; /* مسافة بين الأيقونة والنص */
+            font-size: 0.9em; /* حجم أيقونة أصغر قليلاً */
+            color: var(--secondary-color);
+        }
+
+        .summary p {
+            line-height: 1.8; /* تحسين قراءة النص */
+            font-size: 1.1em;
+            color: var(--text-color);
+            text-align: right;
+        }
+        .experience .job {
+            margin-bottom: 30px; /* زيادة التباعد بين الوظائف */
+            padding-bottom: 20px;
+            border-bottom: 1px dotted var(--border-color); /* خط فاصل منقط */
+        }
+
+        .experience .job:last-child {
+            border-bottom: none;
+        }
+
+        .experience h3 {
+            font-size: 1.7em; /* زيادة حجم الخط */
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            text-align: right;
+            font-weight: 600; /* خط شبه سميك */
+        }
+
+        .experience .duration {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 12px;
+            text-align: right;
+            display: block; /* لضمان ظهور التاريخ في سطر منفصل */
+        }
+
+        .experience ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience li {
+            padding: 6px 0;
+            margin-right: 25px; /* مسافة من اليمين للأيقونة */
+            position: relative;
+            text-align: right;
+            color: #555;
+        }
+
+        .experience li::before {
+            content: "\f00c"; /* أيقونة علامة صح */
+            font-family: "Font Awesome 5 Free"; /* اسم عائلة الخط للأيقونات */
+            font-weight: 900; /* الوزن المطلوب للأيقونات Solid */
+            position: absolute;
+            right: -25px; /* تعديل موضع النقطة */
+            color: var(--primary-color);
+            font-size: 0.8em;
+        }
+
+        .education .degree {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .education .degree:last-child {
+            border-bottom: none;
+        }
+
+        .education h3 {
+            font-size: 1.7em;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .education .duration {
+            font-style: italic;
+            color: #777;
+            margin-bottom: 12px;
+            text-align: right;
+            display: block;
+        }
+
+        .education .description {
+            color: #555;
+            line-height: 1.7;
+            text-align: right;
+        }
+
+        .projects .project {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .projects .project:last-child {
+            border-bottom: none;
+        }
+
+        .projects h3 {
+            font-size: 1.7em;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .projects .description {
+            color: #555;
+            line-height: 1.7;
+            text-align: right;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1000px) {
+            .container {
+                flex-direction: column;
+                width: 95%;
+                margin: 20px auto; /* توسيط الحاوية */
+            }
+
+            .left-column {
+                width: 100%;
+                padding: 25px;
+                align-items: center;
+            }
+
+            .profile {
+                margin-bottom: 25px;
+            }
+
+            .profile h1, .profile .title {
+                text-align: center;
+            }
+
+            .contact-info h3, .skills h3, .languages h3 {
+                text-align: center; /* توسيط العناوين الفرعية في الجوال */
+                justify-content: center; /* توسيط الأيقونة والنص */
+            }
+
+            .contact-info p, .skills li, .languages li {
+                text-align: center; /* توسيط النصوص في الجوال */
+                justify-content: center;
+            }
+
+            .right-column {
+                width: 100%;
+                padding: 25px;
+            }
+
+            .right-column h2 {
+                text-align: center; /* توسيط العناوين الرئيسية في الجوال */
+                justify-content: center;
+            }
+            .summary p, .experience .job, .experience h3, .experience .duration, .experience ul, .education .degree, .education h3, .education .duration, .education .description, .projects .project, .projects h3, .projects .description {
+                text-align: right; /* إبقاء النصوص من اليمين في الجوال */
+            }
+
+            .experience li::before {
+                right: auto; /* إعادة تعيين الموضع الافتراضي */
+                left: 0; /* تحريك النقطة إلى اليسار */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .profile img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile h1 {
+                font-size: 2.2em;
+            }
+
+            .profile .title {
+                font-size: 1.1em;
+            }
+
+            .contact-info p, .skills li, .languages li, .summary p, .experience h3, .experience .duration, .experience li, .education h3, .education .duration, .education .description, .projects h3, .projects .description {
+                font-size: 0.9em;
+            }
+
+            .right-column {
+                padding: 20px;
+            }
+
+            .right-column h2 {
+                font-size: 1.8em;
+                margin-bottom: 15px;
+            }
+
+            .experience li::before {
+                right: auto;
+                left: -10px; /* تعديل الموضع أكثر ليتناسب مع الشاشات الصغيرة */
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <aside class="left-column">
+            <div class="profile">
+                <img src="photo_2025-05-26_11-54-28.jpg" alt="صورة شخصية لعبدالرزاق الأحمد">
+                <h1>عبدالرزاق الأحمد</h1>
+                <p class="title">مطور واجهات أمامية (Front-End Developer)</p>
+            </div>
+            <div class="contact-info">
+                <h3><i class="fas fa-id-card"></i> معلومات الاتصال</h3>
+                <p><i class="fas fa-phone-alt"></i> 963936257805+</p>
+                <p><i class="fas fa-envelope"></i> bdwa94239@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> إدلب، سوريا</p>
+            </div>
+            <div class="skills">
+                <h3><i class="fas fa-tools"></i> المهارات</h3>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript</li>
+                    <li>تصميم متجاوب (Responsive Design)</li>
+                    <li>برامج Microsoft Office</li>
+                </ul>
+            </div>
+            <div class="languages">
+                <h3><i class="fas fa-language"></i> اللغات</h3>
+                <ul>
+                    <li>العربية: اللغة الأم</li>
+                    <li>الإنجليزية: جيد جداً</li>
+                </ul>
+            </div>
+        </aside>
+        <main class="right-column">
+            <section class="summary section-hidden">
+                <h2><i class="fas fa-user-alt"></i> ملخص</h2>
+                <p>
+                    شاب طموح في بداية مسيرتي المهنية، أسعى لتعلم واكتساب المهارات في مجال تطوير الويب. لدي شغف كبير بالبرمجة وأهدف لأن أصبح مطور ويب متكامل. أمتلك أساسيات قوية في HTML, CSS, و JavaScript وأبحث دائماً عن فرص لتطوير قدراتي.
+                </p>
+            </section>
+            <section class="experience section-hidden">
+                <h2><i class="fas fa-briefcase"></i> الخبرة العملية</h2>
+                <div class="job">
+                    <h3>مطور برمجيات | شركة الهرم</h3>
+                    <p class="duration">2024 - 2025</p>
+                    <ul>
+                        <li>مسؤول عن تصميم وإدارة واجهات المستخدم للمواقع الإلكترونية.</li>
+                        <li>تقديم الدعم التقني الأولي وحل المشكلات البرمجية.</li>
+                        <li>المساهمة في تحسين تجربة المستخدم على المنصات الرقمية.</li>
+                    </ul>
+                    </div>
+            </section>
+            <section class="education section-hidden">
+                <h2><i class="fas fa-graduation-cap"></i> التعليم</h2>
+                <div class="degree">
+                    <h3>هندسة الحاسوب | جامعة SPU</h3>
+                    <p class="duration">2022 - حتى الآن</p>
+                    <p class="description">
+                        أدرس تصميم وتطوير أنظمة معلومات حاسوبية، وأطبق تقنيات الحوسبة لحل المشكلات البرمجية وغير البرمجية، مع التركيز على الجانب العملي والتطبيقي.
+                    </p>
+                </div>
+            </section>
+            <section class="projects section-hidden">
+                <h2><i class="fas fa-laptop-code"></i> المشاريع</h2>
+                <div class="project">
+                    <h3>مشروع سيرة ذاتية تفاعلية</h3>
+                    <p class="description">
+                        مشروع جامعي يهدف إلى بناء سيرة ذاتية تفاعلية باستخدام HTML, CSS, و JavaScript، لعرض المهارات والخبرات بشكل جذاب واختبار مدى إتقان التقنيات الأساسية لتطوير الويب.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. تأثير ظهور الأقسام عند التمرير
+            const sections = document.querySelectorAll('.right-column section');
+
+            const observerOptions = {
+                root: null, // هو إطار العرض (viewport)
+                rootMargin: '0px',
+                threshold: 0.2 // عندما يكون 20% من القسم مرئيًا، قم بتشغيل التأثير
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        observer.unobserve(entry.target); // توقف عن مراقبة القسم بعد ظهوره
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+
+            // 2. إضافة تأثير عند التمرير فوق الصورة الشخصية (موجود بالفعل في CSS لكن هذا للتوضيح)
+            // يمكنك إضافة المزيد من التفاعلات هنا إذا أردت، مثلاً تغيير الصورة أو إضافة رسالة.
+            const profileImage = document.querySelector('.profile img');
+            if (profileImage) {
+                profileImage.addEventListener('mouseover', () => {
+                    // هذا التأثير يتم التحكم به بالكامل عبر CSS لـ ':hover'
+                    // إذا أردت تأثير JavaScript هنا، يمكن تعديل خصائص مباشرة
+                    // مثال (للتوضيح فقط، CSS هو الأفضل في هذه الحالة):
+                    // profileImage.style.transform = 'scale(1.1)';
+                });
+                profileImage.addEventListener('mouseout', () => {
+                    // profileImage.style.transform = 'scale(1)';
+                });
+            }
+
+            // 3. إضافة تأثير بسيط للعنوان الرئيسي عند التحميل
+            const mainTitle = document.querySelector('.profile h1');
+            if (mainTitle) {
+                mainTitle.style.opacity = '0';
+                mainTitle.style.transform = 'translateY(-20px)';
+                setTimeout(() => {
+                    mainTitle.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                    mainTitle.style.opacity = '1';
+                    mainTitle.style.transform = 'translateY(0)';
+                }, 500); // تأخير بسيط بعد تحميل الصفحة
+            }
+
+            // 4. تأثير كتابة نص ديناميكي (اختياري)
+            const titleElement = document.querySelector('.profile .title');
+            const titles = ["Front-End Developer", "مصمم واجهات", "مبتكر ويب"];
+            let titleIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            function typeWriter() {
+                const currentTitle = titles[titleIndex];
+                if (isDeleting) {
+                    titleElement.textContent = currentTitle.substring(0, charIndex--);
+                } else {
+                    titleElement.textContent = currentTitle.substring(0, charIndex++);
+                }
+
+                   if (!isDeleting && charIndex > currentTitle.length) {
+            setTimeout(() => isDeleting = true, 1000); // انتظر ثانية ثم ابدأ الحذف
+        } else if (isDeleting && charIndex < 0) {
+            isDeleting = false;
+            titleIndex = (titleIndex + 1) % titles.length; // انتقل للعنوان التالي
+            charIndex = 0;
+        }
+
+        const typingSpeed = isDeleting ? 50 : 100; // سرعة الكتابة والحذف
+        setTimeout(typeWriter, typingSpeed);
+    }
+
+    // قم بتشغيل تأثير الكتابة بعد تأخير بسيط إذا كان العنصر موجوداً
+    if (titleElement) {
+        setTimeout(typeWriter, 1500);
+    }
+});
+</script>
+</body>
+</html>
